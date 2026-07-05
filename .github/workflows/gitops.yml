@@ -10,8 +10,8 @@ on:
 
 # Define environment variables for Terraform and Google Cloud SDK versions
 env:
-  TERRAFORM_VER: 1.14.0
-  CLOUDSDK_VER: 522.0.0
+  TERRAFORM_VER: 1.15.7
+  CLOUDSDK_VER: 575.0.0
 
 # Define the permissions required for this workflow to run.
 # This includes read access to repository contents, write access to ID tokens for authentication, and write access to pull requests.
