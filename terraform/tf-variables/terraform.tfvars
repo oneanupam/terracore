@@ -1,5 +1,5 @@
 // Variables definition
-project_id                = "tidal-outlook-488409-e6"
+project_id                = "extended-ward-500913-i6"
 default_region            = "us-central1"
 default_zone              = "us-central1-a"
 terraform_service_account = "infra-prov-svc-acc@rubberducky-476409.iam.gserviceaccount.com"

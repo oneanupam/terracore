@@ -34,6 +34,14 @@ variable "description" {
   description = "The description of the VPC network being created."
   default     = "The foundation vpc network."
   nullable    = false # If nullable is false and the variable has a default value, then terraform uses the default even if the input value is null.
+  deprecated  = true  # This variable is deprecated and will be removed in future versions. Use vpc_description instead.
+}
+
+variable "vpc_description" {
+  type        = string
+  description = "The description of the VPC network being created."
+  default     = "The foundation vpc network."
+  nullable    = false # If nullable is false and the variable has a default value, then terraform uses the default even if the input value is null.
 }
 
 variable "auto_create_subnetworks" {
