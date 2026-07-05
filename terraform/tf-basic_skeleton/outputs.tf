@@ -1,5 +1,13 @@
 // Resources output
-output "tst_vpc_id" {
-  value       = google_compute_network.tst_vpc.id
-  description = "The ID of the created VPC network."
+output "enable_apis" {
+  value       = google_project_service.enable_api
+  description = "The value of the enabled apis in google cloud."
+}
+
+output "api_ids" {
+  description = "The list of the id of the enabled apis"
+  value = [
+    for value in google_project_service.enable_api :
+    value.id
+  ]
 }

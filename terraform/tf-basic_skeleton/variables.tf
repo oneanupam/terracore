@@ -13,3 +13,8 @@ variable "default_zone" {
   type        = string
   description = "The default zone to create the google cloud zonal resources."
 }
+
+variable "enable_apis" {
+  type        = list(string)
+  description = "List of the APIs to enable in the project."
+}
