@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  pull-request-checks:
+  core-checks:
     runs-on: ubuntu-latest
     steps:
       - name: Code Checkout
