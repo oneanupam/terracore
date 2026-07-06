@@ -20,7 +20,7 @@ resource "google_compute_network" "tst_vpc" {
     }
 
     postcondition {
-      condition     = self.id != ""
+      condition     = self.id != "" # The self object can only be used in postcondition.
       error_message = "VPC network creation failed, ID is empty."
     }
   }
