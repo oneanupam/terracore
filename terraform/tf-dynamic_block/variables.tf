@@ -7,6 +7,10 @@ variable "project_id" {
 variable "default_region" {
   type        = string
   description = "The default region to create the google cloud regional resources."
+  validation {
+    condition     = contains(["us-central1", "us-east1"], var.default_region)
+    error_message = "The region value is not in allowed list."
+  }
 }
 
 variable "default_zone" {
