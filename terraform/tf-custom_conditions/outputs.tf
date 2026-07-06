@@ -9,6 +9,11 @@ output "tst_vpc_id" {
   description = "The ID of the VPC being created"
 }
 
+output "tst_vpc_name" {
+  value       = google_compute_network.tst_vpc.name
+  description = "The name of the VPC being created"
+}
+
 output "tst_password_value" {
   value       = random_password.tst_password.result
   description = "The generated value of the password"
