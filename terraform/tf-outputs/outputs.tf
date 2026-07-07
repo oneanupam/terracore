@@ -11,6 +11,7 @@ output "tst_vpc_id" {
 
 output "tst_password_value" {
   value       = random_password.tst_password.result
+  type        = string
   description = "The generated value of the password"
   sensitive   = true
   precondition {
