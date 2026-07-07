@@ -7,6 +7,8 @@ provider "google" {
   alias = "impersonated"
 }
 
+# Use ephemeral resource block rather data block.
+# You can only reference ephemeral resources in specific ephemeral contexts otherwise, Terraform will throw an error.
 ephemeral "google_service_account_access_token" "default" {
   provider               = google.impersonated
   target_service_account = local.tf_sa
@@ -28,7 +30,7 @@ provider "google" {
 
   // A temporary OAuth 2.0 access token obtained from the Google Authorization server
   // used to authenticate HTTP requests to GCP APIs.
-  access_token = ephemeral.google_service_account_access_token.default.access_token
+  access_token = ephemeral.google_service_account_access_token.default.access_token # This accepts ephemeral resource as reference.
 }
 
 /******************************************
