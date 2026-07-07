@@ -19,5 +19,5 @@ in your configuration as a record of the resource's origin for future module mai
 
 import {
   to = google_compute_subnetwork.tst_subnet
-  id = "projects/weighty-sunbeam-460307-q6/regions/us-central1/subnetworks/subnet-01"
+  id = "projects/extended-ward-500913-i6/regions/us-central1/subnetworks/subnet-01"
 }
