@@ -1,6 +1,6 @@
 /*
 Prerequisites:
-1. Resource must exist in order to fetch a particular attribute.
+1. Resource must exist in order to fetch a particular attribute. Hence, Create a VPC manually to test this example.
 2. Check the provider documentation to know what attributes of a resource can be fetched.
 */
 
