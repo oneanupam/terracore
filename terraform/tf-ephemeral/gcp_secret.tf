@@ -29,5 +29,5 @@ resource "google_secret_manager_secret_version" "tst_vm_secret_version_write_onl
   secret = google_secret_manager_secret.tst_vm_secret.id
 
   secret_data_wo         = ephemeral.random_password.tst_vm_password.result
-  secret_data_wo_version = var.revision
+  secret_data_wo_version = var.revision # To trigger an update of a write-only argument, increment the version argument's value in your configuration as Terraform will notice that change in its plan.
 }
