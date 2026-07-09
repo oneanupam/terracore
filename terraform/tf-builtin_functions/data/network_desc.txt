@@ -1,0 +1,2 @@
+This VPC is managed by Terraform.
+Do not modify manually.

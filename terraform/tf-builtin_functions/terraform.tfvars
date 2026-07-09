@@ -3,8 +3,7 @@ project_id     = "extended-ward-500913-i6"
 default_region = "us-central1"
 default_zone   = "us-central1-a"
 
-vpc_name                = "tst-vpc-01"
-vpc_description         = "     Foundation application vpc network     "
+vpc_name                = "tst-vpc-02     "
 auto_create_subnetworks = "false"
 delete_default_routes   = false
 subnet_name             = ["fdn-tst-subnet-01", "fdn-tst-subnet-02"]
