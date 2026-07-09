@@ -14,7 +14,7 @@
 // Configure Google Cloud Storage (GCS) Backend
 terraform {
   backend "gcs" {
-    # bucket      = "bkt-tfstates-19052025"
+    # bucket      = "tfstates-bkt-050726"
     # prefix      = "tst/tf-gcs-backend"
   }
 }
