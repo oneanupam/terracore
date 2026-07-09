@@ -2,11 +2,19 @@
 variable "project_id" {
   type        = string
   description = "The ID of the google project to house the resources."
+  validation {
+    condition     = length(var.project_id) >= 6 && length(var.project_id) <= 30
+    error_message = "The project id value is incorrect."
+  }
 }
 
 variable "default_region" {
   type        = string
   description = "The default region to create the google cloud regional resources."
+  validation {
+    condition     = contains(["us-central1", "us-east1"], var.default_region)
+    error_message = "The given region is not correct as per requirements."
+  }
 }
 
 variable "default_zone" {
