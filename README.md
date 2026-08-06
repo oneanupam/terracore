@@ -20,17 +20,17 @@ Resources in this repository are meant to use with Terraform 1.14.0 (check the t
 
 **Option-01:** If you are using terraform on your workstation, It is recommended that you authenticate using User Application Default Credentials ("ADCs") as a primary authentication method. You can enable ADCs by running the command.
 
-```
-    gcloud auth application-default login
+```bash
+gcloud auth application-default login
 ```
 
 **Option-02:** You can create a Service Account and reference service account key file in providers configuration block.
 
 <details>
-```python
-    provider "google" {
-        credentials = file("./credentials/service_account_key.json")
-    }
+```bash
+provider "google" {
+    credentials = file("./credentials/service_account_key.json")
+}
 ```
 </details>
 
@@ -49,28 +49,29 @@ It is required to create a Project on Google Cloud Platform to test and deploy t
 
 **✓** Use terraform code snip to enable google cloud service APIs
 
-```
-    // Locals block to define required service APIs.
-    locals {
-    googleapis = [
-        "compute.googleapis.com",
-        "cloudresourcemanager.googleapis.com",
-        "iam.googleapis.com"
-        ]
-    }
-    // Resource block to enable required service APIs
-    resource "google_project_service" "apis" {
-    for_each = toset(local.googleapis)
+```bash
+// Locals block to define required service APIs.
+locals {
+googleapis = [
+    "compute.googleapis.com",
+    "cloudresourcemanager.googleapis.com",
+    "iam.googleapis.com"
+    ]
+}
 
-    project                = "[UPDATE_PROJECT_ID]"
-    service                = each.key
-    disable_on_destroy     = false
-    }
+// Resource block to enable required service APIs
+resource "google_project_service" "apis" {
+for_each = toset(local.googleapis)
+
+project                = "[UPDATE_PROJECT_ID]"
+service                = each.key
+disable_on_destroy     = false
+}
 ```
 
 **✓** Use gcloud command to enable google cloud service APIs
 
-```
+```bash
 gcloud services enable servicenetworking.googleapis.com \
     cloudresourcemanager.googleapis.com \
     compute.googleapis.com \
@@ -81,10 +82,10 @@ gcloud services enable servicenetworking.googleapis.com \
 
 For local backend, terraform state file is stored locally in the current working directory. To use a remote backend (to enable the collaboration of other team members), create a google cloud storage bucket in a GCP project and enable the versioning. Use below gcloud commands to created and set up gcs backend bucket.
 
-```
-    gcloud config set project PROJECT_ID
-    gsutil mb -c standard -l eu gs://bucket-name
-    gsutil versioning set on gs://bucket-name
+```bash
+gcloud config set project PROJECT_ID
+gsutil mb -c standard -l eu gs://bucket-name
+gsutil versioning set on gs://bucket-name
 ```
 
 ## TF Code Execution
@@ -106,8 +107,10 @@ To execute the Terraform code, go to command prompt and then run the following c
 
 To execute the Terraform code using justfile, go to command prompt at the repo root and then run the following commands:
 
-> just --justfile justfile --working-directory terraform/tf-basic_skeleton --dry-run init # for dry run
-> just --justfile justfile --working-directory terraform/tf-basic_skeleton init # for actual run
+```bash
+just --justfile justfile --working-directory terraform/tf-basic_skeleton --dry-run init # for dry run
+just --justfile justfile --working-directory terraform/tf-basic_skeleton init # for actual run
+```
 
 ## References
 
