@@ -22,7 +22,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all branches and tags
-          ref: ${{ github.event.pull_request.head.ref }} # Checkout the PR branch
 
       # Check PR title prefix to ensure it follows the convention
       - name: Check PR title prefix
