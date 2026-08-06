@@ -112,6 +112,17 @@ just --justfile justfile --working-directory terraform/tf-basic_skeleton --dry-r
 just --justfile justfile --working-directory terraform/tf-basic_skeleton init # for actual run
 ```
 
+## Docs Execution
+
+The documentation site is built with Jekyll using minima theme, a static site generator written in Ruby. It turns Markdown files in the docs folder into a browsable website with navigation, pages, and styling.
+
+```bash
+# To run the docs locally -
+
+bundle install
+bundle exec jekyll serve --source docs --host 127.0.0.1 --port 4000
+```
+
 ## References
 
 - https://www.terraform.io/cli
