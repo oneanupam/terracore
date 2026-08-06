@@ -11,6 +11,16 @@ variable "default_zone" {
   description = "The default zone to create the google cloud zonal resources."
 }
 
+variable "business_unit" {
+  type        = string
+  description = "The business unit for which the resources are being created."
+}
+
+variable "environment" {
+  type        = string
+  description = "The environment for which the resources are being created."
+}
+
 variable "terraform_service_account" {
   type        = string
   description = "Terraform service account to execute the terraform code."
@@ -32,7 +42,7 @@ variable "vpc_name" {
 variable "description" {
   type        = string
   description = "The description of the VPC network being created."
-  default     = "The foundation vpc network."
+  default     = "The foundation vpc network"
   nullable    = false # If nullable is false and the variable has a default value, then terraform uses the default even if the input value is null.
   deprecated  = true  # This variable is deprecated and will be removed in future versions. Use vpc_description instead.
 }
@@ -40,7 +50,7 @@ variable "description" {
 variable "vpc_description" {
   type        = string
   description = "The description of the VPC network being created."
-  default     = "The foundation vpc network."
+  default     = "The foundation vpc network"
   nullable    = false # If nullable is false and the variable has a default value, then terraform uses the default even if the input value is null.
 }
 
