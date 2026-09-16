@@ -1,47 +1,52 @@
-# Contribution
-This document provides guidelines for contributing to the project.
+# Contributing
+Thank you for contributing. This guide outlines the process for proposing changes and submitting pull requests.
 
-## Pull Request
-Pull requests are the best way to propose changes to the codebase (we use ["fork-and-pull" Git workflow](https://github.com/susam/gitpr)). We actively welcome your pull requests:
+## Pull requests
+Pull requests are the preferred way to propose changes to the codebase. We follow the [fork-and-pull workflow](https://github.com/susam/gitpr) and welcome contributions from the community.
 
-1. Fork the repository to your own Github account.
-2. Clone the project to your machine.
-3. Create a branch locally with a succinct but descriptive name.
-4. Commit changes to the branch following any formatting and testing guidelines specific to this repo.
-5. Push changes to your forked repository.
-6. Open a Pull Request in our repository.
+1. Fork the repository to your own GitHub account.
+2. Clone the project to your local machine.
+3. Create a branch with a concise, descriptive name.
+4. Make your changes and follow any repository-specific formatting or testing requirements.
+5. Push the branch to your fork.
+6. Open a pull request in the main repository.
 
 ## Guidelines
 
-### Commit Message Guidelines
-Use the combination of "Commit Type" and "Commit Summary" with an optional "Commit description".
+### Commit message guidelines
+Use a commit format that includes a commit type and a clear summary, with an optional description when needed.
 
-* Commit Type: Use the proper commit type for the changes as per [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) types.
-* Commit Summary: Always use the imperative present tense (Write your commit messages as if you're giving a command or describing what the commit does, not what you did). Don’t capitalize the first letter of the commit message. Don’t use a period at the end of your text.
-```
-Ex: Suppose, You updated a file. So, the commit message could be -
-    docs: update readme file
-    feat: add application dockerfile
-```
+- Commit type: Use the appropriate conventional commit type as defined by [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+- Commit summary: Write the summary in the imperative mood, as if giving a command. Do not capitalize the first letter, and do not end it with a period.
 
-### PR Guidelines
-Format: [Commit Type] Short Summary
-
-```
-Ex: Suppose, You added some functionality. So, the title could be -
-    [feat] added function to read input from user
+```bash
+Examples:
+  docs: update readme file
+  feat: add application dockerfile
 ```
 
-### Coding Guidelines
-* Try to put comments in your code, where required.
-* Try to follow DRY (Don't Repeat Yourself) principle.
-* Follow the style guide to write terraform code recommended by terraform.
+### Pull request guidelines
+Use a title in the format: [Commit Type] Short Summary
 
-## Report Bugs
-We use GitHub issues to track bugs. Report a bug by opening a new issue.
+```bash
+Examples:
+  [feat] add input parsing for user data
+  [fix] resolve VPC subnet configuration issue
+```
 
-## Linting and Formatting
-All of the terraform configuration files in the repository must be linted or formatted using `terraform fmt` to maintain a standard of quality.
+### Coding guidelines
+- Add comments only where they improve clarity.
+- Follow the DRY principle and avoid unnecessary duplication.
+
+## Linting and formatting
+The repository contains configuration for the pre-commit tool to automate linting and formatting checks during a commit. To keep the codebase consistent, use the following tools:
+
+- Bash scripts must be linted with [ShellCheck](https://www.shellcheck.net/).
+- Python files must be formatted and linted with [Ruff](https://docs.astral.sh/ruff/).
+- Terraform configuration files must be formatted with `terraform fmt`.
+
+## Reporting bugs
+We use GitHub Issues to track bugs. Please open a new issue to report a problem or unexpected behavior.
 
 ## License
-By contributing, you agree that your contributions will be licensed under its [MIT License](LICENSE.md).
+By contributing, you agree that your contributions will be licensed under the project's [MIT License](LICENSE.md).
